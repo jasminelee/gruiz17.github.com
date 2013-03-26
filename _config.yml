@@ -1,0 +1,39 @@
+auto: true
+url: http://gruiz17.github.com
+
+selfProjects:
+- name: Explosions
+  date: March 2013
+  url: "http://gruiz17.github.com/explosions"
+  description: Even more fancy visuals. No music sadly. Made for 2013 Spring CSUA Hackathon.
+
+- name: Weeknd3
+  date: March 2013
+  url: "http://weeknd3.herokuapp.com"
+  description: Fancy visuals set to The Weeknd's "Echoes of Silence."
+
+- name: Profanely
+  date: February 2013
+  url: "http://profanely.herokuapp.com"
+  description: A curse word generator.
+
+- name: Personal Website v1
+  date: December-January 2013
+  url: "http://gabrielgruiz.herokuapp.com"
+  description: Deployed to exercise Django knowledge when I got really sick over winter break. Includes a blog.
+
+- name: Ripple
+  date: November 2013
+  url: "http://github.com/gruiz17/ripple"
+  description: First hackathon project. Text-based adventure game in Python with a choice system.
+
+sandboxes:
+- name: Node.js sandbox
+  url: "http://node-sandbox.herokuapp.com"
+  description: Various things I'm building with Node.js to help myself learn its ins and outs.
+
+orgProjects:
+- orgReq: Berkeley Project
+  name: Blog/Announcement Feed
+  url: "http://berkeleyproject.org/blog"
+  description: A blogging system I made for the Berkeley Project. The Berkeley Project is a volunteer organization on campus.

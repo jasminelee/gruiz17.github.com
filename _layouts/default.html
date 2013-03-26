@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title> {% if page.title %} {{ page.title }} | {% endif %} Gabriel Ruiz's Website.</title>
+
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+    <link rel="stylesheet" href="../stylesheets/pygment_trac.css">
+    <meta name="description" content="Gabriel Ruiz's site for projects and stuff, made because studying Plant Biology's boring. Enjoy!">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="../javascripts/d3.v3.js"></script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-38880263-4']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h2>Gabriel Ruiz</h2>
+        <p style="font-style:italic">rare.</p>
+        <p>Welcome. Click on one of the links below. Or play with the visualization.</p>
+        <li>&raquo; <a href="/">About</a></li>
+        <li>&raquo; <a href="/projects">Projects</a></li>
+        <li>&raquo; <a href="http://dl.dropbox.com/s/14bvli9w9lawfza/GabrielRuizResume.pdf">Resume</a></li>
+        <li>&raquo; <a href="http://github.com/gruiz17">GitHub</a></li>
+        <li></li>
+        <br>
+        <div class="vis">
+        <script type="text/javascript">
+        var z = d3.scale.category20b(),
+            i = 0;
+
+        var svg = d3.select(".vis")
+          .append("svg:svg")
+          .attr("width",160)
+          .attr("height",250)
+          .style("pointer-events","all")
+          .on("mousemove",drawing);
+
+        function drawing() {
+          var m = d3.mouse(this);
+          var swag = [0,0,0,0,0,0,0]
+          var k;
+          for (k = 0; k < swag.length; k++)
+          {
+          var curmx = m[0],
+            curmy = m[1]
+          svg.append("svg:circle")
+            .attr("cx",curmx)
+            .attr("cy",curmy)
+            .attr("r",4)
+            .style("stroke","#00FFFF")
+            .style("fill","#00FFFF")
+            .transition()
+            .delay(750)
+            .duration(800)
+            .attr("cx",curmx+Math.floor(Math.random()*200)-100)
+            .attr("cy",curmy+Math.floor(Math.random()*200)-100)
+            .style("stroke",z(++i))
+            .style("fill",z(++i))
+            .style("stroke-opacity",1e-6)
+            .style("fill-opacity",1e-6)
+            .remove();
+          }
+        }
+        </script>
+      </div>
+
+      </header>
+      <section>
+        {{ content }}
+        <hr>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <br>
+        <br>
+        <br>
+      </section>
+    </div>
+    <script src="../javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
